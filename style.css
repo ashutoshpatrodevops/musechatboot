@@ -1,0 +1,270 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+.chat-container {
+    width: 100%;
+    height: 100%;
+    background-color: #fff9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+/* Header styling */
+.header {
+    display: flex;
+    height: 60px;
+    background-color: #000000;
+    padding: 7px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    justify-content: space-between;
+}
+
+.language-select {
+    display: flex;
+    align-items: center;
+}
+
+.language-select label {
+    margin-right: 10px;
+    color: white;
+}
+
+.language-select select {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Chat output container */
+.chat-output {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-image: url('interior7.jpg');
+    background-size: cover;
+    background-position: center;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.chat-output p {
+    margin: 10px 0;
+}
+
+/* Message Styles */
+.user-message {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.bot-response {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px 0;
+}
+
+/* Message Bubbles */
+.user-message p, .bot-response p {
+    padding: 10px;
+    border-radius: 15px;
+    max-width: 70%;
+}
+
+.user-message p {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.bot-response p {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Input area styling */
+.input-area {
+    display: flex;
+    padding: 15px;
+    background-color: #fffdfd;
+    align-items: center;
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#search-btn {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#search-btn:hover {
+    background-color: #d4af37;
+    color: white;
+}
+
+.mic-icon {
+    font-size: 27px;
+    color: #000000;
+    margin-left: 0px;
+    margin-right: 7px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.mic-icon:hover {
+    color: #d4af37;
+}
+
+/* Scrollbar styling */
+.chat-output {
+    scrollbar-width: thin;
+    scrollbar-color: #007bff #f9f9f9;
+}
+
+.chat-output::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-output::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 10px;
+}
+
+#chat-output {
+    position: relative;
+}
+
+.profile-header {
+    position: relative;
+    align-items: center;
+    top: 20%;
+    right: 0px;
+    cursor: pointer;
+}
+
+/* Billing Info and Payment Form */
+.billing-info {
+    border: 2px solid #cee3cf;
+    border-radius: 7px;
+    padding: 15px;
+    margin: 20px 0;
+    width: 300px;
+    background-color: #007bff;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.billing-info h3 {
+    margin-top: 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+.billing-info p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.centered-form, .payment-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Media Queries for responsiveness */
+
+/* For large screens and desktops */
+@media (min-width: 1024px) {
+    .chat-container {
+        width: 100%;
+        height: 100vh;
+    }
+}
+
+/* For tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .chat-container {
+        width: 90%;
+    }
+
+    .billing-info {
+        width: 250px;
+        left: auto;
+        top: 0;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 767px) {
+    .chat-container {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .header {
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    #user-input {
+        padding: 8px;
+    }
+
+    #search-btn {
+        padding: 8px 15px;
+    }
+
+    .billing-info {
+        width: 100%;
+        margin: 10px 0;
+        left: 0;
+        top: 0;
+    }
+
+    .centered-form, .payment-form {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .mic-icon {
+        font-size: 24px;
+    }
+}
